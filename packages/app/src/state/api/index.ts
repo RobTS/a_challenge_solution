@@ -11,13 +11,18 @@ const wrappedFetch = (url: string) => {
   }).then((data) => data.json());
 };
 
-export const fetchData = (): Promise<Profile[]> => {
+// Promise.race as timeout implementation due to lack of a native one
+const wrappedFetchWithTimeout = <T>(url: string) => {
   return Promise.race([
-    wrappedFetch('/') as Promise<Profile[]>,
+    wrappedFetch(url) as Promise<T>,
     new Promise<Profile[]>((_, reject) =>
       setTimeout(() => reject(new Error('Timeout while fetching')), 30000),
     ),
   ]);
+};
+
+export const fetchData = (): Promise<Profile[]> => {
+  return wrappedFetchWithTimeout<Profile[]>('/');
 };
 
 export const Api = {

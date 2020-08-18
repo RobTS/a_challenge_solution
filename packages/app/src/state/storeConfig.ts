@@ -7,6 +7,7 @@ export const configureStore = () => {
   const middlewares: Middleware[] = [thunk];
 
   if (__DEV__) {
+    // flipper plugin for easier development workflow
     middlewares.push(FlipperPlugin());
   }
 

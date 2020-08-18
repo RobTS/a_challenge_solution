@@ -19,6 +19,7 @@ export type RequestWithError = {
   data?: undefined;
 };
 
+// A simple union type for requests
 export type RequestState<T> =
   | RequestMissingData
   | RequestWithData<T>
