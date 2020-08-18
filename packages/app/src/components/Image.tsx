@@ -14,6 +14,6 @@ export const Image: React.FC<ImageProps> = (props: ImageProps) => (
       uri: props.url,
       priority: FastImage.priority.normal,
     }}
-    resizeMode={FastImage.resizeMode.contain}
+    resizeMode={FastImage.resizeMode.cover}
   />
 );
