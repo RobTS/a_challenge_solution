@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { ProfileList } from '../containers/ProfileList';
 import { useSelector } from 'react-redux';
 import { useThunk } from '../state/hooks';
-import { fetchData } from '../state/thunks';
+import { Thunks } from '../state/thunks';
 import { GlobalState } from '../state/reducerTypes';
 import { useNavigation } from '@react-navigation/native';
 
@@ -21,7 +21,7 @@ export const ProfileListScreen = () => {
     if (profileRequestState !== 'initial') {
       return;
     }
-    dispatchThunk(fetchData());
+    dispatchThunk(Thunks.fetchData());
   }, [dispatchThunk, profileRequestState]);
 
   return <ProfileList />;

@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 import { GlobalState } from '../state/reducerTypes';
 import { ProfileListItem } from '../components/ProfileListItem';
 
-export const ProfileList = () => {
+export const ProfileList: React.FC = () => {
   const profileRequest = useSelector((state: GlobalState) => state.profiles);
 
   const renderItem = useCallback(({ item, index }) => {
     return (
       <ProfileListItem
-        even={!!(index % 2)}
+        even={index % 2 === 0}
         id={item.id}
         avatar={item.avatar}
         name={item.name}

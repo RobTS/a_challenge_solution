@@ -14,3 +14,7 @@ export const fetchData = () => (dispatch: Dispatch): Promise<void> => {
       throw error;
     });
 };
+
+export const Thunks = {
+  fetchData,
+};
