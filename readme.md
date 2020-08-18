@@ -1,6 +1,8 @@
+<img src="docs/images/screenshot.png" width="200">
+
 # Challenge project
 
-This project is the solution to a code challenge I was presented with.
+This project is the solution to a code challenge.
 
 It is set up as a monorepo consisting of two sub-projects, a Node.js backend and a React Native mobile app.
 
@@ -33,3 +35,7 @@ npx react-native run-ios
 The iOS simulator will be able to access the server through the host specified in `./packages/app/src/config.ts`, for Android, you might need to adapt it to match your local IP or run `adb reverse tcp:3000 tcp:3000`.
 
 Once the app starts up, you should be able to see the images and names of people provided in the sample data set.
+
+### ToDos:
+
+* Replace React Test Renderer with Enzyme and add more sophisticated checks for component fields (e.g. explicit names instead of just snapshot).
