@@ -38,4 +38,18 @@ describe('The store', () => {
       cb();
     }, 50);
   });
+
+  it('fails correctly with mocked Api', (cb) => {
+    const errorName = 'This should not happen';
+    const store = configureStore();
+    const mockFetch = fetchData as jest.Mock;
+    mockFetch.mockReturnValue(Promise.reject(new Error(errorName)));
+    Thunks.fetchData()(store.dispatch);
+    setTimeout(() => {
+      expect(mockFetch).toHaveBeenCalled();
+      expect(store.getState().profiles.type).toEqual('error');
+      expect(store.getState().profiles.error?.message).toEqual(errorName);
+      cb();
+    }, 50);
+  });
 });

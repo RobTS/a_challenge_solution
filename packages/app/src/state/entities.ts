@@ -4,11 +4,13 @@ import * as SafeActions from './actions';
 export type RequestMissingData = {
   type: 'initial' | 'loading' | 'error';
   data?: undefined;
+  error?: undefined;
 };
 
 export type RequestWithData<T> = {
   type: 'success';
   data: T;
+  error?: undefined;
 };
 
 export type RequestWithError = {

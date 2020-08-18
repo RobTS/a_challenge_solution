@@ -6,10 +6,27 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { ProfileList } from '../src/containers/ProfileList';
 import { configureStore } from '../src/state/storeConfig';
-import { fetchDataSuccess } from '../src/state/actions';
+import {
+  fetchDataFail,
+  fetchDataStart,
+  fetchDataSuccess,
+} from '../src/state/actions';
 
 describe('The profile list', () => {
-  it('renders correctly', () => {
+  it('renders correctly without content', () => {
+    const store = configureStore();
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <ProfileList />
+        </Provider>,
+      )
+      .toJSON() as any;
+    expect(tree.children).toHaveLength(1);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly with content', () => {
     const store = configureStore();
     store.dispatch(
       fetchDataSuccess([
@@ -20,6 +37,34 @@ describe('The profile list', () => {
         },
       ]),
     );
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <ProfileList />
+        </Provider>,
+      )
+      .toJSON() as any;
+    expect(tree.children).toHaveLength(1);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly when loading', () => {
+    const store = configureStore();
+    store.dispatch(fetchDataStart());
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <ProfileList />
+        </Provider>,
+      )
+      .toJSON() as any;
+    expect(tree.children).toHaveLength(1);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly on fetch error', () => {
+    const store = configureStore();
+    store.dispatch(fetchDataFail(new Error('This should not happen')));
     const tree = renderer
       .create(
         <Provider store={store}>

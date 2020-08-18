@@ -1,7 +1,136 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The profile list renders correctly 1`] = `
+exports[`The profile list renders correctly on fetch error 1`] = `
 <RCTScrollView
+  ListHeaderComponent={<ListHeader />}
+  contentContainerStyle={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#ffffff",
+      "justifyContent": "center",
+    }
+  }
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffa500",
+            "justifyContent": "center",
+            "padding": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          No connection to the server. Have you started it and adapted the SERVER_URL?
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`The profile list renders correctly when loading 1`] = `
+<RCTScrollView
+  ListHeaderComponent={<ListHeader />}
+  contentContainerStyle={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#ffffff",
+      "justifyContent": "center",
+    }
+  }
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffa500",
+            "justifyContent": "center",
+            "padding": 10,
+          }
+        }
+      >
+        <Text>
+          Loading content
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`The profile list renders correctly with content 1`] = `
+<RCTScrollView
+  ListHeaderComponent={<ListHeader />}
   contentContainerStyle={
     Object {
       "alignItems": "stretch",
@@ -46,6 +175,9 @@ exports[`The profile list renders correctly 1`] = `
   windowSize={21}
 >
   <View>
+    <View
+      onLayout={[Function]}
+    />
     <View
       onLayout={[Function]}
       style={null}
@@ -110,6 +242,52 @@ exports[`The profile list renders correctly 1`] = `
         </Text>
       </View>
     </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`The profile list renders correctly without content 1`] = `
+<RCTScrollView
+  ListHeaderComponent={<ListHeader />}
+  contentContainerStyle={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#ffffff",
+      "justifyContent": "center",
+    }
+  }
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+    />
   </View>
 </RCTScrollView>
 `;
