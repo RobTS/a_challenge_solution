@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The profile item renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "position": "relative",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#000000",
+          "flex": 1,
+          "height": 421.875,
+          "width": 750,
+        },
+      ]
+    }
+  >
+    <FastImageView
+      resizeMode="cover"
+      source={
+        Object {
+          "priority": "normal",
+          "uri": "https://i.pravatar.cc/150?img=2",
+        }
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "bottom": 30,
+        "fontWeight": "bold",
+        "left": 0,
+        "paddingHorizontal": 20,
+        "paddingVertical": 10,
+        "position": "absolute",
+      }
+    }
+  >
+    Peter Testman
+  </Text>
+</View>
+`;
