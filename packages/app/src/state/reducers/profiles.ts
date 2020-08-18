@@ -3,7 +3,7 @@ import { ProfileReducerState } from '../reducerTypes';
 import { SAFE_CONSTANTS } from '../constants';
 
 export const profilesReducer = (
-  state: ProfileReducerState,
+  state: ProfileReducerState = { type: 'initial' },
   action: SafeActionType,
 ): ProfileReducerState => {
   switch (action.type) {

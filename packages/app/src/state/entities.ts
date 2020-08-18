@@ -2,7 +2,7 @@ import { ActionType } from 'typesafe-actions';
 import * as SafeActions from './actions';
 
 export type RequestMissingData = {
-  type: 'initial' | 'loading' | 'success' | 'error';
+  type: 'initial' | 'loading' | 'error';
 };
 
 export type RequestWithData<T> = {
